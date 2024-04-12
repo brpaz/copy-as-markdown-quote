@@ -1,0 +1,77 @@
+name: 'Release'
+on:
+  release:
+    types: [published]
+
+env:
+  EXTENSION_NAME: 'copy-as-markdown-quote'
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+
+      - uses: fregante/setup-git-user@v2
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: bump version
+        run: pnpm version ${{ github.event.release.tag_name }}
+
+      - name: create arttifact directory
+        run: mkdir -p build-artifacts
+
+      - name: Build (Chrome)
+        run: |
+          TARGET=chrome pnpm build
+          cd dist
+          zip -r ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip ./*
+
+          mv ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip ../build-artifacts/
+
+      - name: Build (Firefox)
+        run: |
+          TARGET=firefox pnpm build
+          cd dist
+          zip -r ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-firefox.zip ./*
+
+          mv ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-firefox.zip ../build-artifacts/
+
+      - name: Upload release artifacts
+        uses: Roang-zero1/github-upload-release-artifacts-action@v2
+        with:
+          args: 'build-artifacts/*.zip'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Changelog
+        uses: stefanzweifel/changelog-updater-action@v1
+        with:
+          latest-version: ${{ github.event.release.tag_name }}
+          release-notes: ${{ github.event.release.body }}
+
+      - name: Commit release files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: ${{ github.event.release.target_commitish }}
+          commit_message: 'chore(release): [skip-ci] ${{ github.event.release.tag_name }}'
+          file_pattern: CHANGELOG.md package.json
