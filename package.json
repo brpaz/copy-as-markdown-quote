@@ -1,0 +1,33 @@
+{
+  "name": "copy-as-markdown-quote",
+  "description": "A browser extension that copies selected text as markdown quote",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=21.0.0"
+  },
+  "scripts": {
+    "compile": "tsc --noEmit",
+    "dev": "vite",
+    "build": "vite build",
+    "package": "pnpm run build && zip -r copy-as-markdown-quote.zip dist",
+    "format": "prettier --write src/**/*.ts",
+    "format:check": "prettier --check src/**/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/webextension-polyfill": "^0.10.7",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.4",
+    "typescript-eslint": "^7.6.0",
+    "vite": "^5.0.0",
+    "vite-plugin-web-extension": "^4.0.0",
+    "webextension-polyfill": "^0.10.0"
+  }
+}
