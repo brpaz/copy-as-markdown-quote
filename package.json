@@ -1,7 +1,7 @@
 {
   "name": "copy-as-markdown-quote",
   "description": "A browser extension that copies selected text as markdown quote",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "type": "module",
   "engines": {
     "node": ">=21.0.0"
