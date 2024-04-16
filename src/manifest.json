@@ -35,5 +35,10 @@
     "activeTab",
     "contextMenus",
     "clipboardWrite"
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "copy-as-markdown-quote@brunopaz.dev"
+    }
+  }
 }
