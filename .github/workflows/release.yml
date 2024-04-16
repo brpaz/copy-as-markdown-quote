@@ -63,7 +63,7 @@ jobs:
           WEB_EXT_CHANNEL: 'listed'
 
       - name: Upload release artifacts
-        uses: Roang-zero1/github-upload-release-artifacts-action@v2
+        uses: Roang-zero1/github-upload-release-artifacts-action@v3
         with:
           args: 'build-artifacts/*'
         env:
