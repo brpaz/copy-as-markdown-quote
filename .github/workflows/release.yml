@@ -47,7 +47,7 @@ jobs:
           zip -r ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip ./*
 
           cd ..
-          mv ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip build-artifacts/
+          mv dist/${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip build-artifacts/
 
       - name: Build (Firefox)
         run: |
