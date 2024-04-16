@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.5 - 2024-04-16
+
+### What's Changed
+
+* No changes
+
+**Full Changelog**: https://github.com/brpaz/copy-as-markdown-quote/compare/v0.2.4...v0.2.5
+
 ## v0.2.2 - 2024-04-16
 
 ### What's Changed
