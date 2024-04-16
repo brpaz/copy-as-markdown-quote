@@ -35,8 +35,9 @@ TARGET=firefox pnpm run dev
 
 To build the application for distrubtion run:
 
-- **Google Chrome** - `TARGET=google-chrome pnpm build`
+- **Google Chrome** - `TARGET=chrome pnpm build`
 
 - **Firefox** - `TARGET=firefox pnpm build`
 
+The build artifact will be placed in `dist` folder.
 
