@@ -55,6 +55,9 @@ jobs:
 
           ## Get .xpi file and rename it
           find web-ext-artifacts -type f -name "*.xpi" -exec mv {} ../build-artifacts/${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-firefox.xpi \;
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
+          WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
 
       - name: Upload release artifacts
         uses: Roang-zero1/github-upload-release-artifacts-action@v2
