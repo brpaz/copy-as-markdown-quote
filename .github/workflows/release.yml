@@ -46,7 +46,8 @@ jobs:
           cd dist
           zip -r ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip ./*
 
-          mv ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip ../build-artifacts/
+          cd ..
+          mv ${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-chrome.zip build-artifacts/
 
       - name: Build (Firefox)
         run: |
@@ -54,7 +55,8 @@ jobs:
           pnpm run sign
 
           ## Get .xpi file and rename it
-          find web-ext-artifacts -type f -name "*.xpi" -exec mv {} ../build-artifacts/${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-firefox.xpi \;
+          ls web-ext-artifacts
+          find web-ext-artifacts -type f -name "*.xpi" -exec mv {} build-artifacts/${{env.EXTENSION_NAME}}-${{github.event.release.tag_name}}-firefox.xpi \;
         env:
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}

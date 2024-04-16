@@ -2,7 +2,7 @@
 
 ## Pre-requisites
 
-Before starting, make sure to have [NodeJS](https://nodejs.org/en) >= 21 and [PNPM](https://pnpm.io/) installed on your machine.
+Before starting, make sure to have [NodeJS](https://nodejs.org/en/download/package-manager) >= 21 and [PNPM](https://pnpm.io/installation) installed on your machine.
 
 ## Getting started
 
