@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.2 - 2024-04-16
+
+### What's Changed
+
+* ci(github-actions): fix build
+
+**Full Changelog**: https://github.com/brpaz/copy-as-markdown-quote/compare/v0.2.1...v0.2.2
+
 ## v0.2.0 - 2024-04-16
 
 ### What's Changed
