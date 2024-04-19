@@ -38,7 +38,7 @@ function getSelectedHTML() {
     return ''
   }
 
-  var div = document.createElement('div')
+  const div = document.createElement('div')
   div.appendChild(range.cloneContents()) // Get the document fragment from selected range
   return div.innerHTML // Return the actual HTML
 }
