@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.0 - 2024-04-19
+
+### What's Changed
+
+#### 🚀 Features
+
+- feat: process html text @brpaz (#7)
+
+**Full Changelog**: https://github.com/brpaz/copy-as-markdown-quote/compare/v0.2.5...v0.3.0
+
 ## v0.2.5 - 2024-04-16
 
 ### What's Changed
