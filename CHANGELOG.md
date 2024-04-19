@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.4.0 - 2024-04-19
+
+### What's Changed
+
+#### 🚀 Features
+
+- feat: refactor logic to use scripting instead of required host permis… @brpaz (#8)
+
+#### 🧩 Dependency Updates
+
+- chore(deps-dev): bump @typescript-eslint/parser from 7.6.0 to 7.7.0 @dependabot (#5)
+
+**Full Changelog**: https://github.com/brpaz/copy-as-markdown-quote/compare/v0.3.0...v0.4.0
+
 ## v0.3.0 - 2024-04-19
 
 ### What's Changed
