@@ -30,10 +30,15 @@ browser.runtime.onInstalled.addListener(() => {
   })
 })
 
-browser.contextMenus.onClicked.addListener(function (info, tab) {
+browser.contextMenus.onClicked.addListener(async function (info, tab) {
   if (!tab?.id) {
     return
   }
+
+  await browser.scripting.executeScript({
+    target: { tabId: tab.id },
+    files: ['src/content.js'],
+  })
 
   if (info.menuItemId === CONTEXT_MENU_COPY_AS_TEXT_ITEM_ID) {
     browser.tabs.sendMessage(tab.id, {

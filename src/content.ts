@@ -5,6 +5,8 @@ import {
 } from './constants'
 import { markdownQuoteFromText, markdownQuoteFromHTML } from './quote'
 
+console.log('content script loaded')
+
 interface CopySelectionMessage {
   action: typeof COPY_SELECTION_TEXT_ACTION | typeof COPY_SELECTION_HTML_ACTION
   text: string
