@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@eslint/js':
-    specifier: ^9.0.0
-    version: 9.0.0
+    specifier: ^9.3.0
+    version: 9.3.0
   '@types/webextension-polyfill':
     specifier: ^0.10.7
     version: 0.10.7
@@ -404,6 +404,11 @@ packages:
 
   /@eslint/js@9.0.0:
     resolution: {integrity: sha512-RThY/MnKrhubF6+s1JflwUjPEsnCEmYCWwqa/aRISKWNXGZ9epUwft4bUMM35SdKF9xvBrLydAM1RDHd1Z//ZQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    dev: true
+
+  /@eslint/js@9.3.0:
+    resolution: {integrity: sha512-niBqk8iwv96+yuTwjM6bWg8ovzAPF9qkICsGtcoa5/dmqcEMfdwNAX7+/OHcJHc7wj7XqPxH98oAHytFYlw6Sw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
